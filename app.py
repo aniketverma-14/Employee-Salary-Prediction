@@ -42,7 +42,8 @@ input_df = pd.DataFrame([input_data])
 
 if st.button("Predict"):
     prediction = model.predict(input_df)[0]
-if prediction == 1:
-    st.success("This person is likely to change jobs.")
-else:
-    st.warning("This person is not likely to change jobs.")
+    
+    if prediction == 1:
+        st.success("This person is likely to change jobs.")
+    else:
+        st.warning("This person is not likely to change jobs.")
