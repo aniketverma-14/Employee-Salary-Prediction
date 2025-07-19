@@ -9,11 +9,14 @@ with gzip.open("job_change_model.pkl.gz", "rb") as f:
 
 st.title("Salary Prediction Web App")
 
-experience = st.slider("Years of Experience", 0, 30, 2)
+# 👇 Add this first (was missing)
+experience_numeric = st.slider("Years of Experience", 0.0, 30.0, 2.0)
+
 current_salary = st.number_input("Current Salary (INR)", 100000, 5000000, step=10000)
 relevent_experience = st.selectbox("Relevant Experience", ["Yes", "No"])
 education_level = st.selectbox("Education Level", ["Graduate", "Masters", "Phd", "High School", "Other"])
 company_size = st.selectbox("Company Size", ["<10", "10-49", "50-99", "100-500", "500-999", "1000-4999", "5000-9999", "10000+"])
+
 
 # Dummy encoded values (you should use LabelEncoder mappings from training)
 re_map = {"No": 0, "Yes": 1}
