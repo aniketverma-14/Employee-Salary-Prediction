@@ -14,5 +14,5 @@ experience = st.slider("Years of Experience", 0, 30, 2)
 
 if st.button("Predict Salary"):
     df = pd.DataFrame([[experience]], columns=["experience"])
-    prediction = model.predict(df)
+    prediction = model.predict(df)[0]
     st.success(f"Estimated Salary: ₹{int(prediction[0]):,}")
