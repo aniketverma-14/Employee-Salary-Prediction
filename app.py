@@ -3,7 +3,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-model = pickle.load(open("model.pkl", "rb"))
+model = pickle.load(open("job_change_model.pkl", "rb"))
 
 st.set_page_config(page_title="Salary Predictor")
 st.title("Salary Prediction Web App")
