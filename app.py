@@ -3,7 +3,9 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-model = pickle.load(open("job_change_model.pkl.gz", "rb"))
+import gzip
+with gzip.open("job_change_model.pkl.gz", "rb") as f:
+    model = pickle.load(f)
 
 st.set_page_config(page_title="Salary Predictor")
 st.title("Salary Prediction Web App")
